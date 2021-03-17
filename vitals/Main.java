@@ -1,4 +1,4 @@
-package functional;
+package vitals;
 
 public class Main {
     static boolean batteryIsOk(float temperature, float soc, float chargeRate) {
