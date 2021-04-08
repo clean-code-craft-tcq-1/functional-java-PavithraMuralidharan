@@ -20,9 +20,16 @@ public class checkBattery {
 		isSOC_OK = checkSOC(soc);
 		isChargeRate_OK = checkChargeRate(chargeRate);
 		
-		Main.printOutput(isTemperature_OK , isSOC_OK , isChargeRate_OK);
+		printMessage("Temperature",isTemperature_OK);
+		printMessage("SOC",isSOC_OK);
+		printMessage("ChargeRate",isChargeRate_OK);
 		
 		return (isTemperature_OK && isSOC_OK && isChargeRate_OK);
+	}
+	
+	static void printMessage(String type,boolean flag) {
+		String msg = !flag ? "Out of Range" : "Is In Range"; 
+		System.out.println(String.format("%s %s",type,msg));
 	}
 	
 	private static boolean checkTemperature(int temperature, String unit) {

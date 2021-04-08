@@ -2,13 +2,6 @@ package extensions;
 
 public class Main {
 	
-	static void printOutput(boolean isTemperature_OK, boolean isSOC_OK, boolean isChargeRate_OK)
-	{
-		Message.printMessage((!isTemperature_OK) ? "Temperature Out of Range" : "Temperature Is In Range");
-		Message.printMessage((!isSOC_OK) ? "SOC Out of Range" : "SOC Is In Range");
-		Message.printMessage((!isChargeRate_OK) ? "ChargeRate Out of Range" : "ChargeRate Is In Range");
-	}
-	
 	public static void main(String[] args) {
 		
 		
