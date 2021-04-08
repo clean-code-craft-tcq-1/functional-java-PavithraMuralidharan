@@ -12,4 +12,5 @@ public class Main {
 		  assert(checkBattery.batteryIsOk(25, 25, 0.9f) == false);
 		 
         System.out.println("Some more tests needed");
+	}
 }
