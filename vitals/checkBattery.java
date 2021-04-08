@@ -10,21 +10,21 @@ public class checkBattery {
 
 	private static float Max_Charge_Rate = 0.8f;
 	
-	static boolean isTemperature_OK = false;
-	static boolean isSOC_OK = false;
-	static boolean isChargeRate_OK = false;
+	static boolean isTemperatureOK = false;
+	static boolean isSOCOK = false;
+	static boolean isChargeRateOK = false;
 
-	public static boolean batteryIsOk(int temperature, int soc, float chargeRate, String unit) 
+	public static boolean batteryIsOk(int temperature, int soc, float chargeRate) 
 	{
-		isTemperature_OK = checkTemperature(temperature,unit);
-		isSOC_OK = checkSOC(soc);
-		isChargeRate_OK = checkChargeRate(chargeRate);
+		isTemperatureOK = checkTemperature(temperature);
+		isSOCOK = checkSOC(soc);
+		isChargeRateOK = checkChargeRate(chargeRate);
 		
-		printMessage("Temperature",isTemperature_OK);
-		printMessage("SOC",isSOC_OK);
-		printMessage("ChargeRate",isChargeRate_OK);
+		printMessage("Temperature",isTemperatureOK);
+		printMessage("SOC",isSOCOK);
+		printMessage("ChargeRate",isChargeRateOK);
 		
-		return (isTemperature_OK && isSOC_OK && isChargeRate_OK);
+		return (isTemperatureOK && isSOCOK && isChargeRateOK);
 	}
 	
 	static void printMessage(String type,boolean flag) {
@@ -32,10 +32,7 @@ public class checkBattery {
 		System.out.println(String.format("%s %s",type,msg));
 	}
 	
-	private static boolean checkTemperature(int temperature, String unit) {
-		if(unit.equals("F"))
-			temperature = UnitConversion.convertFarenheitToCelsius(temperature);
-		
+	private static boolean checkTemperature(int temperature) {
 		return new VaildateTolerance(Min_Temperature,Max_Temperature)
 				.checkTemperatureRange(temperature);
 	}
