@@ -1,4 +1,4 @@
-package extensions;
+package vitals;
 
 public class Main {
 	
