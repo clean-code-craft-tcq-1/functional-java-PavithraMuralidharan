@@ -33,17 +33,17 @@ public class checkBattery {
 	}
 	
 	private static boolean checkTemperature(int temperature) {
-		return new VaildateTolerance(Min_Temperature,Max_Temperature)
+		return new validateRange(Min_Temperature,Max_Temperature)
 				.checkTemperatureRange(temperature);
 	}
 
 	private static boolean checkSOC(int soc) {
-		return new VaildateTolerance(Min_SOC,Max_SOC)
+		return new validateRange(Min_SOC,Max_SOC)
 				.checkSOCRange(soc);
 	}
 	
 	private static boolean checkChargeRate(float chargeRate) {
-		return new ChargeRate(Max_Charge_Rate)
+		return new chargeRate(Max_Charge_Rate)
 				.checkChargeRate(chargeRate);
 		
 	}
